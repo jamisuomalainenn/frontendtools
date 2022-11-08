@@ -1,0 +1,14 @@
+<div class="kuva" style="padding: 50px">
+    <h1>{{title}} {{first_name}}</h1>
+
+    <img alt="item" [src]="itemImageUrl">
+
+    <br>
+
+    <button (click)="changeImg()" mat-raised-button color="warn">Älä vaan paina tästä!</button>
+    <br>
+    <input [(ngModel)]="first_name" />
+    <br>
+    <mat-slider min="1" max="5" step="0.5" value="1.5"></mat-slider>
+
+</div>
