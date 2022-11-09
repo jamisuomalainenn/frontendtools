@@ -8,6 +8,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { HelloworldComponent } from './helloworld/helloworld.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
@@ -21,7 +23,9 @@ import { MatSliderModule } from '@angular/material/slider';
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
+    MatFormFieldModule,
     BrowserAnimationsModule,
+    MatGridListModule,
     MatSliderModule,
     FormsModule,
 

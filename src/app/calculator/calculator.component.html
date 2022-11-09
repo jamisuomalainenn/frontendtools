@@ -1,1 +1,11 @@
 <p>calculator works!</p>
+<mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile class="answer" colspan="4">
+        <input id="vastaus" value="{{result}}">
+    </mat-grid-tile>
+
+    <mat-grid-tile class="buttons" *ngFor="let button of buttons    ">
+        <button mat-raised-button (click)="addValue(button)">{{button}}</button>
+    </mat-grid-tile>
+
+</mat-grid-list>
