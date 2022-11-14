@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FeedbackItem } from './feedback';
 
 @Component({
   selector: 'app-feedback',
@@ -6,10 +7,56 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
+  title = "questions";
+  autoTicks = false;
+  disabled = false;
+  invert = false;
+  max = 3;
+  min = 0;
+  showTicks = false;
+  step = 1;
+  thumbLabel = false;
+  value = 0;
+  vertical = false;
+  thickInterval = 1;
 
-  constructor() { }
+  user: any;
+  answer: string = '';
+
+  feedbackItemArray: Array<FeedbackItem> = [];
+
+
+
+  questionValue() {
+    if (this.value == 0) {
+      this.answer = 'Vastaa kysymykseen';
+    }
+    else if (this.value = 1) {
+      this.answer = 'Välttävä';
+    }
+    else if (this.value == 2) {
+      this.answer = 'Hyvä';
+    }
+    else {
+      this.answer = 'Erinomainen';
+    }
+  }
+
+  constructor() {
+    this.feedbackItemArray = [
+      new FeedbackItem(""),
+      new FeedbackItem(""),
+      new FeedbackItem("")
+    ];
+    //this.user = {
+    // question: ['Question 1', 'Question 2', 'Question 3']
+    //}
+  }
 
   ngOnInit(): void {
   }
 
+  onInputChange(feedbackEvent: any, fbItem: FeedbackItem) {
+    fbItem.setAnswer(feedbackEvent.value);
+  }
 }

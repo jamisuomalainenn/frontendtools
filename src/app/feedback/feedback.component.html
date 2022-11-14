@@ -1,1 +1,7 @@
 <p>feedback works!</p>
+<!--div *ngFor="let question of questions"-->
+<div *ngFor="let item of feedbackItemArray">{{item}}
+    <mat-label>Kysymyksen vastaus on: {{answer}}</mat-label>
+    <mat-slider [max]="3" [min]="0" [step]="1" [value]="0" aria-label="units" (input)="onInputChange($event, item)">
+    </mat-slider>{{item.answer}}
+</div>
