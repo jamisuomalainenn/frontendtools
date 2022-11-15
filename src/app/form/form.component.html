@@ -1,0 +1,13 @@
+<h1>Registeration Form</h1>
+
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>Input</mat-label>
+        <input matInput placeholder="First Name" name="firstName" [(ngModel)]="person.firstName" #fname="ngModel"
+            required minlength="2" pattern="^[a-zA-Z ]*$">
+        <mat-error *ngIf="fname.hasError('required')">Enter your first name</mat-error>
+        <mat-error *ngIf="fname.hasError('minlenght')">Minimum 2 characters required</mat-error>
+        <mat-error *ngIf="fname.hasError('pattern')">Must be valid name</mat-error>
+    </mat-form-field>
+
+</div>

@@ -44,9 +44,9 @@ export class FeedbackComponent implements OnInit {
 
   constructor() {
     this.feedbackItemArray = [
-      new FeedbackItem(""),
-      new FeedbackItem(""),
-      new FeedbackItem("")
+      new FeedbackItem("Q1"),
+      new FeedbackItem("Q2"),
+      new FeedbackItem("Q3")
     ];
     //this.user = {
     // question: ['Question 1', 'Question 2', 'Question 3']

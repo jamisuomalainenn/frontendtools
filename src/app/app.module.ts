@@ -10,14 +10,27 @@ import { HelloworldComponent } from './helloworld/helloworld.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+
+import { MatMenuModule } from '@angular/material/menu';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatSelectModule } from '@angular/material/select';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FormComponent } from './form/form.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculatorComponent,
     FeedbackComponent,
-    HelloworldComponent
+    HelloworldComponent,
+    FormComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -26,8 +39,15 @@ import { MatSliderModule } from '@angular/material/slider';
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatMenuModule,
     MatSliderModule,
+    MatSelectModule,
+    MatToolbarModule,
     FormsModule,
+    RouterModule
+
 
   ],
   providers: [],

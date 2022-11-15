@@ -1,0 +1,14 @@
+<mat-toolbar-row>
+    <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon> format_list_bulleted</mat-icon>
+    </button>
+    Front-end työkalut
+    <mat-menu #menu="matMenu">
+
+        <button mat-menu-item><a routerLink="/helloworld" routerLinkActive="active">HelloWorld</a></button>
+        <button mat-menu-item><a routerLink="/calculator" routerLinkActive="active">Calculator</a></button>
+        <button mat-menu-item><a routerLink="/feedback" routerLinkActive="active">Feedback</a></button>
+        <button mat-menu-item><a routerLink="/form" routerLinkActive="active">Forms</a></button>
+
+    </mat-menu>
+</mat-toolbar-row>
