@@ -6,6 +6,7 @@ export class Person {
     email: any = '';
     username: any = '';
     password: any = '';
+    password2: any = '';
     checkbox: any = '';
 
     constructor() {
