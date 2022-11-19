@@ -1,4 +1,5 @@
 export class Person {
+
     firstName: string = '';
     lastName: string = '';
     personID: any = '';
@@ -10,6 +11,5 @@ export class Person {
     constructor() {
         this.firstName = this.firstName;
     }
-
 
 }

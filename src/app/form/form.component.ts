@@ -8,7 +8,15 @@ import { Person } from './person';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  person: Person;
+
+  constructor() {
+
+    this.person = new Person;
+
+  }
+
+
 
   ngOnInit(): void {
   }
