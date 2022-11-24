@@ -15,8 +15,6 @@ export class FeedbackComponent implements OnInit {
 
   constructor(fbservice: FeedbackService) {
     this.feedbackItemArray = fbservice.getData();
-
-    //this.feedbackItemArray = [new FeedbackItem('kysymys 1'), new FeedbackItem('kysymys 2'), new FeedbackItem('kysymys 3')];
   }
 
   ngOnInit(): void {
