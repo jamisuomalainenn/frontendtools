@@ -8,6 +8,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { HelloworldComponent } from './helloworld/helloworld.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
@@ -22,6 +23,7 @@ import { FormComponent } from './form/form.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import { CinemaComponent } from './cinema/cinema.component';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     HelloworldComponent,
     FormComponent,
     ToolbarComponent,
-    ReactiveformComponent
+    ReactiveformComponent,
+    CinemaComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     MatButtonModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
+    MatExpansionModule,
     MatGridListModule,
     MatIconModule,
     MatInputModule,

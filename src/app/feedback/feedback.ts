@@ -1,21 +1,30 @@
+import { __values } from "tslib";
+
 export class FeedbackItem {
-    questions: string;
+    question: string;
     answer: any;
-    answerList: Array<string>;
-    user: any;
 
-    constructor(question: string, answer?: string) {
-        this.questions = question;
-        this.answer = answer;
-        this.answerList = ['Ei arvosteltu', 'Huono', 'Ok', 'Hyvä'];
-        this.user = {
-            question: ['Kysymys 1', 'Kysymys 2', 'Kysymys 3']
+
+    setAnswer(nr: any) {
+        if (nr == 0) {
+            this.answer = 'Ei arvosteltu';
         }
+        else if (nr == 1) {
+            this.answer = 'Huono';
+        }
+        else if (nr == 2) {
+            this.answer = 'Ok';
+        }
+        else {
+            this.answer = 'Hyvä';
+        }
+
     }
 
-    //let q: FeedbackItem[] = [new FeedbackItem('Kysymys 1', 1), new FeedbackItem('Kysymys 1', 2), new FeedbackItem('Kysymys 1', 3)];
+    constructor(question: string) {
+        this.question = question;
+        this.answer = 'Ei arvosteltu';
 
-    setAnswer(value: number) {
-        this.answer = this.answerList[value];
     }
+
 }
