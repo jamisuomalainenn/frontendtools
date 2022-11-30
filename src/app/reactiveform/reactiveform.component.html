@@ -47,7 +47,7 @@
     </mat-form-field>
     <br>
     <mat-form-field>
-        <input matInput placeholder="password" formControlName="password"
+        <input matInput type="password" placeholder="password" formControlName="password"
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}$">
 
         <mat-error *ngIf="password?.hasError('required')">At least 10 characters, capital letters and numerals
@@ -58,7 +58,8 @@
     </mat-form-field>
     <br>
     <mat-form-field>
-        <input matInput placeholder="password" formControlName="password2" pattern="{{password?.value}}">
+        <input matInput type="password" placeholder="password" formControlName="password2"
+            pattern="{{password?.value}}">
 
         <mat-error *ngIf="password2?.hasError('required')">Password must match</mat-error>
 
@@ -70,6 +71,6 @@
     <mat-error *ngIf="checkbox?.hasError('requiredTrue')">Accept!</mat-error>
     <br>
 
-    <button type="submit" class="btn btn-succes" [disabled]="!profileForm.valid">Submit</button>
+    <button type="submit" (click)="onSubmit()" [disabled]="!profileForm.valid">Submit</button>
     <button type="reset" class="btn">Reset</button>
 </form>

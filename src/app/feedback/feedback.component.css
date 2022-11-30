@@ -1,0 +1,17 @@
+.component {
+    background-color: chocolate;
+}
+
+
+.kysymys {
+    margin-left: 50em;
+    margin-right: 50em;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+    text-align: center;
+    margin-top: 5%;
+    background-color: burlywood;
+}

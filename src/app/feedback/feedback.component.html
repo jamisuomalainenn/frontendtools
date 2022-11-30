@@ -1,6 +1,8 @@
 <!--div *ngFor="let question of questions"-->
 <div class="kysymys" *ngFor="let item of feedbackItemArray">{{item.question}}
     <mat-label> vastaus on: </mat-label>
+    {{item.answer}}
+
     <mat-slider [max]="3" [min]="0" [step]="1" [value]="0" aria-label="units" (input)="onInputChange($event, item)">
-    </mat-slider>{{item.answer}}
+    </mat-slider>
 </div>

@@ -10,10 +10,15 @@ export class ReactiveformComponent implements OnInit {
 
   profileForm: FormGroup;
 
-  onSubmit(profileForm: any) {
-
+  onSubmit() {
+    console.log('profileForm.firstNameValue: ' + this.profileForm.value.firstName);
     console.log('profileForm.value: ' + this.profileForm.value);
-    console.log('profileForm.value: ' + this.profileForm.value.firstName);
+    console.log('profileForm.lastNameValue: ' + this.profileForm.value.lastName);
+    console.log('profileForm.personIdValue: ' + this.profileForm.value.persoid);
+    console.log('profileForm.emailValue: ' + this.profileForm.value.email);
+    console.log('profileForm.usernameValue: ' + this.profileForm.value.username);
+    console.log('profileForm.passwordValue: ' + this.profileForm.value.password);
+    console.log('profileForm.valid: ' + this.profileForm.valid);
     this.profileForm.reset();
   }
 
@@ -25,7 +30,7 @@ export class ReactiveformComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
       username: new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern("^[a-zA-Z0-9 ]*$")]),
       password: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{10,}$")]),
-      password2: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern("{{password.value}}")]),
+      password2: new FormControl('', [Validators.required]),
       checkbox: new FormControl('', [Validators.requiredTrue])
     })
   }
