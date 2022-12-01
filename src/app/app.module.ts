@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { getLocaleDateFormat } from '@angular/common';
 import { HelloworldComponent } from './helloworld/helloworld.component';
+import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -39,6 +41,7 @@ import { CinemaComponent } from './cinema/cinema.component';
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
+    HttpClientModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatExpansionModule,
