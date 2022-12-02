@@ -9,6 +9,8 @@ import { CinemaService } from '../services/cinema.service';
 })
 export class CinemaComponent implements OnInit {
 
+  searchTerm: string = '';
+
   cinemaData$: Observable<any>;
   panelOpenState = false;
 

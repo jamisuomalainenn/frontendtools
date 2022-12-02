@@ -1,8 +1,9 @@
 <mat-toolbar-row>
+    <h3>Front-end työkalut</h3>
     <button mat-button [matMenuTriggerFor]="menu">
         <mat-icon> format_list_bulleted</mat-icon>
     </button>
-    Front-end työkalut
+
     <mat-menu #menu="matMenu">
 
         <button mat-menu-item><a routerLink="/helloworld" routerLinkActive="active">HelloWorld</a></button>
@@ -11,6 +12,14 @@
         <button mat-menu-item><a routerLink="/form" routerLinkActive="active">Forms</a></button>
         <button mat-menu-item><a routerLink="/reactiveform" routerLinkActive="active">Reactive-Forms</a></button>
         <button mat-menu-item><a routerLink="/cinema" routerLinkActive="active">Finn-Kino Uutisia</a></button>
+        <button mat-menu-item><a routerLink="/admin" routerLinkActive="active">Admin-välilehti</a></button>
+        <button mat-menu-item><a routerLink="/login" routerLinkActive="active">LogIn</a></button>
+
+
 
     </mat-menu>
+
+
 </mat-toolbar-row>
+<button mat-raised-button color="primary" style="margin-left: 95%"><a routerLink="/admin/login" routerLink="active">Sign
+        In</a></button>

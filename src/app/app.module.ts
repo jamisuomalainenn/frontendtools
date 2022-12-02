@@ -24,6 +24,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { CinemaComponent } from './cinema/cinema.component';
+import { PipeCinemaPipe } from './pipes/pipe-cinema.pipe';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
+
 
 
 @NgModule({
@@ -35,7 +39,10 @@ import { CinemaComponent } from './cinema/cinema.component';
     FormComponent,
     ToolbarComponent,
     ReactiveformComponent,
-    CinemaComponent
+    CinemaComponent,
+    PipeCinemaPipe,
+    AdminComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +59,7 @@ import { CinemaComponent } from './cinema/cinema.component';
     MatSliderModule,
     MatSelectModule,
     MatToolbarModule,
+
     FormsModule,
     RouterModule,
     ReactiveFormsModule

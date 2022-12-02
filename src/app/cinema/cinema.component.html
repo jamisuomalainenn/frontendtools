@@ -1,8 +1,17 @@
 <mat-accordion>
-    <mat-expansion-panel *ngFor="let item of cinemaData$ | async">
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Kirjoita hakusana</mat-label>
+            <input matInput placeholder="Placeholder" [(ngModel)]="searchTerm">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </p>
+    <mat-expansion-panel *ngFor="let item of cinemaData$ | async | pipeCinema: searchTerm">
+
         <mat-expansion-panel-header>
+
             <mat-panel-title>
-                {{item.PublishDate}}
+                {{item.PublishDate | date:"dd.MM.yy"}}
             </mat-panel-title>
             <mat-panel-description>
                 {{item.Title}}
