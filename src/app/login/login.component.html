@@ -12,9 +12,9 @@
         <mat-label>Password</mat-label>
         <input placeholder="Password" type="password">
         <br><br>
-        <button type="login" class="btn btn-succes">Login</button>
+        <button type="login" class="btn btn-succes" (click)="goToHome()">Login</button>
 
-        <button>Cancel</button>
+        <button routerLink="/helloworld">Cancel</button>
 
     </mat-form-field>
 
