@@ -9,13 +9,15 @@ import { Router } from "@angular/router"
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  login(): void { }
   constructor(public router: Router) {
     this.router.navigate(['admin/helloworld']);
     //this.router.navigate(['feedback']);
     //this.router.navigate(['form']);
     //this.router.navigate(['reactiveform']);
     //this.router.navigate(['cinema']);
+
+
   }
   goToHome() {
     this.router.navigate(['helloworld']);
