@@ -68,8 +68,8 @@
     <br>
     <mat-form-field appearance="fill">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" name="password1" [(ngModel)]="person.password" #password="ngModel"
-            required minlength="10" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}$">
+        <input matInput placeholder="Password" type="password" name="password1" [(ngModel)]="person.password"
+            #password="ngModel" required minlength="10" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}$">
         <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
             <p>Password is required.</p>
         </div>
@@ -82,8 +82,8 @@
     <br>
     <mat-form-field appearance="fill">
         <mat-label>Password again</mat-label>
-        <input matInput placeholder="Rewrite the Password" name="password2" [(ngModel)]="person.password2"
-            #password2="ngModel" required minlength="10" pattern="{{password.value}}">
+        <input matInput placeholder="Rewrite the Password" type="password" name="password2"
+            [(ngModel)]="person.password2" #password2="ngModel" required minlength="10" pattern="{{password.value}}">
         <div *ngIf="password2.invalid && (password2.dirty || password2.touched)" class="alert alert-danger">
             <p>Password does not match</p>
         </div>

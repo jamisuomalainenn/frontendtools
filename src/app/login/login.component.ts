@@ -9,7 +9,10 @@ import { Router } from "@angular/router"
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  login(): void { }
+
+  login(): void {
+    console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@222");
+  }
   constructor(public router: Router) {
     this.router.navigate(['admin/helloworld']);
     //this.router.navigate(['feedback']);

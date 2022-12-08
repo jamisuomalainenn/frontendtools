@@ -1,8 +1,11 @@
-<mat-toolbar-row>
-    <h3>Front-end työkalut</h3>
-    <button mat-button [matMenuTriggerFor]="menu">
-        <mat-icon> format_list_bulleted</mat-icon>
-    </button>
+<mat-toolbar>
+    <h3>Front-end työkalut<button mat-button [matMenuTriggerFor]="menu">
+            <mat-icon> format_list_bulleted</mat-icon>
+        </button> <button routerLink="/login" class="buttons" mat-raised-button color="primary">Log
+            In</button>
+        <button routerLink="/login" mat-raised-button color="primary">Register</button>
+    </h3>
+
 
     <mat-menu #menu="matMenu">
 
@@ -20,5 +23,4 @@
     </mat-menu>
 
 
-</mat-toolbar-row>
-<button routerLink="/login" mat-raised-button color="primary" style="margin-left: 95%">Log In</button>
+</mat-toolbar>
