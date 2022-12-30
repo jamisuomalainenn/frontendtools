@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from "@angular/router"
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,11 +8,17 @@ import { Router } from "@angular/router"
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
-  constructor(public router: Router) {
-    this.router.navigate(['admin/helloworld']);
-    //this.router.navigate(['feedback']);
-    //this.router.navigate(['form']);
-    //this.router.navigate(['reactiveform']);
-    //this.router.navigate(['cinema']);
+
+  email: any;
+  password: any;
+
+  constructor(public router: Router, public authService: AuthService) {
+    this.email;
+    this.password;
   }
+
+  logout() {
+    this.authService.logout();
+  }
+
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +28,8 @@ import { CinemaComponent } from './cinema/cinema.component';
 import { PipeCinemaPipe } from './pipes/pipe-cinema.pipe';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
-
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase') as ModuleWithProviders<AngularFireModule>,
 
 
 

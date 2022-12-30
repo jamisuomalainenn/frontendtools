@@ -1,21 +1,27 @@
-<form class="login">
-    <mat-form-field>
-
+<div class="login-form">
+    <form [formGroup]="loginForm">
         <p>Email</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput formControlName="email" placeholder="Email">
+            <mat-error *ngIf="email?.hasError('required')">Required</mat-error>
+        </mat-form-field>
+        <br>
 
-        <mat-label>Email</mat-label>
-        <input placeholder="Email Address" type="input">
-
-        <br><br><br>
+        <br>
         <p>Password</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput formControlName="password" type="password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button [disabled]="loginForm.invalid" type="submit" (click)="logIn()">Login</button>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <button mat-raised-button (click)="cancelButton()">Cancel</button>
 
-        <mat-label>Password</mat-label>
-        <input placeholder="Password" type="password">
-        <br><br>
-        <button type="login" class="btn btn-succes" (click)="goToHome()">Login</button>
-
-        <button routerLink="/helloworld">Cancel</button>
-
-    </mat-form-field>
-
-</form>
+    </form>
+</div>

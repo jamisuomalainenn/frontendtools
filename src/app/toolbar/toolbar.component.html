@@ -6,7 +6,13 @@
         <button routerLink="/login" mat-raised-button color="primary">Register</button>
     </h3>
 
+    <!--button mat-flat-button class="signin" color="accent" routerLink="/admin/login" routerLinkActive="active"
+        ngIf="!(userEmail$ | async)">Sign in</button>
 
+    <div class="signout" ngIf="(userEmail$ | async)">
+        {{userEmail$ | async}}
+        <button mat-flat-button color="accent" routerLink="/admin/login" (click)="logout()">Sign out</button>
+    </div-->
     <mat-menu #menu="matMenu">
 
         <button mat-menu-item><a routerLink="/helloworld" routerLinkActive="active">HelloWorld</a></button>
@@ -15,6 +21,7 @@
         <button mat-menu-item><a routerLink="/form" routerLinkActive="active">Forms</a></button>
         <button mat-menu-item><a routerLink="/reactiveform" routerLinkActive="active">Reactive-Forms</a></button>
         <button mat-menu-item><a routerLink="/cinema" routerLinkActive="active">Finn-Kino Uutisia</a></button>
+        <button mat-menu-item><a routerLink="/admin/login" routerLinkActive="active">AdminLogin</a></button>
         <!--button mat-menu-item><a routerLink="/admin" routerLinkActive="active">Admin-välilehti</a></button>
         <button mat-menu-item><a routerLink="/login" routerLinkActive="active">LogIn</a></button-->
 

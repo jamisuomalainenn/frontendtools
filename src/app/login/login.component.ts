@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { AppRoutingModule } from '../app-routing.module';
-import { AppComponent } from '../app.component';
-import { Router } from "@angular/router"
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,23 +10,32 @@ import { Router } from "@angular/router"
 })
 export class LoginComponent {
 
-  login(): void {
-    console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@222");
-  }
-  constructor(public router: Router) {
-    this.router.navigate(['admin/helloworld']);
-    //this.router.navigate(['feedback']);
-    //this.router.navigate(['form']);
-    //this.router.navigate(['reactiveform']);
-    //this.router.navigate(['cinema']);
+  loginForm: FormGroup;
 
+  constructor(public router: Router, public authService: AuthService) {
+    this.loginForm = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required])
 
+    });
   }
-  goToHome() {
-    this.router.navigate(['helloworld']);
+  get email() {
+    return this.loginForm.get('email');
   }
+  get password() {
+    return this.loginForm.get('password');
+  }
+
+  hide = true;
+
+  ngOnInit(): void {
+  }
+
+  logIn() {
+    this.authService.login(this.email, this.password);
+  }
+  cancelButton() {
+    this.router.navigate(['']);
+  }
+
 }
-
-
-
-
