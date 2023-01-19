@@ -9,6 +9,7 @@ import { HelloworldComponent } from './helloworld/helloworld.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { AuthGuard } from './shared/auth.guard';
+import { TenttiComponent } from './tentti/tentti.component';
 
 
 
@@ -20,7 +21,8 @@ const appRoutes: Routes = [
   { path: 'reactiveform', component: ReactiveformComponent },
   { path: 'cinema', component: CinemaComponent },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'tentti', component: TenttiComponent }
 
 ];
 

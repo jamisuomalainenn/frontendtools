@@ -1,0 +1,79 @@
+<div id="tentti">
+    <div>
+        <h1>Lainalaskuri</h1>
+        <br>
+        <p>Lainan määrä:</p>
+        <br>
+        <mat-slider thumbLabel [(ngModel)]="loanAmnt" type="number" min="500" max="10000" step="100"
+            (input)="LoanAmount($event)"></mat-slider>
+        <label>{{loanAmnt}} €</label>
+        <br><br>
+        <p>Laina-aika:</p>
+        <br>
+        <mat-slider thumbLabel type="number" min="1" max="10" step="1" (input)="LoanTime($event)"></mat-slider>
+        <label>{{loanTme}} v</label>
+        <br>
+        <p>Arvioitu kuukausierä: {{monthlyPay.toFixed(2)}}€</p>
+        <br>
+        <p>__________________________________________________________________________________________________________________
+        </p>
+        <br>
+        <br>
+    </div>
+    <div>
+        <form class="form" [formGroup]="loanForm" (ngSubmit)="onSubmit">
+            <mat-form-field>
+                <input matInput placeholder="Henkilötunnus" formControlName="personid">
+
+                <mat-error *ngIf="personid?.hasError('required')">Enter your Personal ID</mat-error>
+                <mat-error *ngIf="personid?.hasError('minlenght')">Minimum 11 characters required</mat-error>
+                <mat-error *ngIf="personid?.hasError('pattern')">Must be valid ID</mat-error>
+
+            </mat-form-field>
+            &nbsp;
+            <mat-form-field>
+                <input matInput placeholder="Etunimi" formControlName="firstName">
+
+                <mat-error *ngIf="firstName?.hasError('required')">Enter your first name</mat-error>
+                <mat-error *ngIf="firstName?.hasError('minlenght')">Minimum 2 characters required</mat-error>
+                <mat-error *ngIf="firstName?.hasError('pattern')">Must be valid name</mat-error>
+
+            </mat-form-field>
+            &nbsp;
+            <mat-form-field>
+                <input matInput placeholder="Sukunimi" formControlName="lastName">
+
+                <mat-error *ngIf="lastName?.hasError('required')">Enter your last name</mat-error>
+                <mat-error *ngIf="lastName?.hasError('minlenght')">Minimum 2 characters required</mat-error>
+                <mat-error *ngIf="lastName?.hasError('pattern')">Must be valid name</mat-error>
+
+            </mat-form-field>
+
+
+            <br>
+            <mat-form-field>
+                <input matInput placeholder="Sähköposti" formControlName="email">
+
+                <mat-error *ngIf="email?.hasError('required')">Enter your email</mat-error>
+                <mat-error *ngIf="email?.hasError('pattern')">Must be valid email</mat-error>
+
+            </mat-form-field>
+            &nbsp;
+
+            <mat-form-field>
+                <input matInput placeholder="Puhelinnumero" formControlName="phone">
+
+                <mat-error *ngIf="phone?.hasError('required')">Enter your number</mat-error>
+                <mat-error *ngIf="phone?.hasError('pattern')">Must be valid number</mat-error>
+
+            </mat-form-field>
+            <br>
+            <input type="checkbox" name="checkbox" formControlName="checkbox"><label>
+                Olen hyväksynyt sopimusehdot ja annan suostumukseni henkilötietojeni käsittelyyn.
+            </label>
+            <mat-error *ngIf="checkbox?.hasError('requiredTrue')">Accept!</mat-error>
+            <br>
+            <br> <button type="submit" (click)="onSubmit()" [disabled]="!loanForm.valid">LÄHETÄ HAKEMUS</button>
+        </form>
+    </div>
+</div>

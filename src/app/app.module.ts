@@ -30,6 +30,7 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
+import { TenttiComponent } from './tentti/tentti.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { environment } from 'src/environments/environment';
     CinemaComponent,
     PipeCinemaPipe,
     AdminComponent,
-    LoginComponent
+    LoginComponent,
+    TenttiComponent
   ],
   imports: [
     BrowserModule,
